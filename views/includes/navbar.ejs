@@ -1,0 +1,39 @@
+<!-- navigation bar -->
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"> StayBuddy</i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<!-- Left -->
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore Listings</a>
+      </div>
+<!-- Center --> 
+      <% if(currentPath === "/listings"){ %>        <!-- show Search box only on View All Listings Route -->
+        <div class="navbar-nav search-box">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="search location" aria-label="Search"/>
+            <button class="btn btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          </form>
+        </div>
+      <% } %>
+<!-- Right -->
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings/new">Add New Listing</a>
+
+        <% if(!currentUser){ %>
+            <a class="nav-link" href="/signup">Sign Up</a>
+            <a class="nav-link" href="/login">Log In</a>
+        <% } %>
+
+        <% if(currentUser){ %>
+            <a class="nav-link" href="/logout">Log Out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
