@@ -1,8 +1,9 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 
 async function main(){
-    mongoose.connect("mongodb://127.0.0.1:27017/stayBuddy");
+    mongoose.connect(process.env.ATLAS_URL);
 }
 main().then(()=>{
     console.log("connection successful.");
@@ -364,7 +365,7 @@ const sampleListings = [
 // module.exports = { data: sampleListings };
 
 const insertData = async ()=>{
-  let data = sampleListings.map((listing)=>({...listing, owner : '685685755d34920c997bdd34'}));
+  let data = sampleListings.map((listing)=>({...listing, owner : '685ce53ca609f4b9368ad220'}));
   
   await Listing.insertMany(data);
   console.log("Data inserted successfully.");
