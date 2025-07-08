@@ -3,6 +3,7 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
 }
 
 .container{
@@ -15,9 +16,96 @@ body{
 }
 
 
+/* ----- Homepage ----- */
+.homepage{
+    height: 100vh;
+    background-color: #fe424d;
+    color: white;
+    text-align: center;
+    
+}
+.homepage h2{
+    font-size: 1.7rem;
+    margin: 1rem 0 3rem 0;
+}
+
+.homepage-nav{
+    height: 4rem;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+}
+
+.homepage-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    /* margin-top: 2rem; */
+}
+.homepage-brand img{
+    height: calc(5rem + 4vw);
+    width: calc(5rem + 4vw);
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+.homepage-brand h1{
+    margin: 0;
+    font-size: calc(4rem + 3vw);
+}
+
+.homepage-btn{
+    background-color: white;
+    color: crimson;
+    padding: 1rem;
+    width: 20rem;
+    border: none;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.homepage-btn:hover{
+    transform: scale(1.02);
+}
+
+.homepage-footer{
+    height: 4rem;
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+}
+
+.homepage-info{
+    margin-top: 7rem;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+@keyframes slideUp{
+    from{
+        transform: translateY(250px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+
 /* ----- Navbar ----- */
 .navbar{
     height: 5rem;
+    background-color: white;
+}
+.container-fluid{
     background-color: white;
 }
 .fa-compass{
@@ -29,17 +117,19 @@ body{
 }
 .nav-link{
     color: #222222 !important;
+    white-space: nowrap;
 }
 
 /* Navbar Search-Box */
 .search-box input{
-    width: 25rem;
+    width: 12rem;
     border-radius: 1.5rem;
     padding: 0.5rem 1rem;
 }
 .search-box button{
     border-radius: 1.5rem;
-    padding: 0 1.3rem; 
+    padding: 0 1.3rem;
+    white-space: nowrap; 
 }
 
 /* Navbar Hover Effect */
@@ -123,6 +213,7 @@ body{
 .foot-links a{
 text-decoration: none;
 color: #222222;
+margin: 0.3rem;
 }
 .foot-links a:hover{
     text-decoration: underline;

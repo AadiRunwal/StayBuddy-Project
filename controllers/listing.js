@@ -91,3 +91,13 @@ module.exports.destroyListing = async (req,res)=>{
     res.redirect("/listings");
     console.log(deletedListing);
 };
+
+
+//---------- Book Listing ----------
+
+module.exports.bookListing = (req,res)=>{
+    let {id} = req.params;
+    req.flash("success","Booked Successfuly.");
+    res.redirect(`/listings/${id}`);
+    
+}

@@ -90,10 +90,6 @@ app.listen(port,()=>{
     console.log("Port Active.");
 });
 
-app.get("/",(req,res)=>{
-    let link = "<h3>Homepage</h3> <a href='/listings'>Listings</a>"
-    res.send(link);
-});
 
 // ---------- Locals-Variable Middleware. (variables can be accessed anywhere) ----------
 app.use((req,res,next)=>{
@@ -102,6 +98,11 @@ app.use((req,res,next)=>{
     res.locals.currentUser = req.user;
     res.locals.currentPath = req.originalUrl;
     next();
+});
+
+
+app.get("/",(req,res)=>{                                    //____________________ HomePage Route. ____________________
+    res.render("./Listings/Homepage.ejs");
 });
 
 app.use("/listings",listingRoutes);                     // ____________________  Listing Routes. ____________________

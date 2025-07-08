@@ -39,4 +39,7 @@ router.put("/:id", isOwner, validateListing, upload.single("listing[image]"), as
 router.delete("/:id", isLoggedIn, isOwner, asyncWrap(listingController.destroyListing));
 
 
+//---------- Book Listing. ----------
+router.get("/:id/book" , isLoggedIn, listingController.bookListing);
+
 module.exports = router;

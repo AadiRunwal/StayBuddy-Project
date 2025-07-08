@@ -13,14 +13,14 @@
         <a class="nav-link" href="/listings">Explore Listings</a>
       </div>
 <!-- Center --> 
-      <% if(currentPath === "/listings"){ %>        <!-- show Search box only on View All Listings Route -->
+      <!-- <% if(currentPath !== "/listings/:id"){ %> -->           <!-- show Search box only on View All Listings Route -->
         <div class="navbar-nav search-box">
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="search location" aria-label="Search"/>
             <button class="btn btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
           </form>
         </div>
-      <% } %>
+      <!-- <% } %> -->
 <!-- Right -->
       <div class="navbar-nav">
         <a class="nav-link" href="/listings/new">Add New Listing</a>

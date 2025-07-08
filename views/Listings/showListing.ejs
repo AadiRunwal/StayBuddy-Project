@@ -26,7 +26,7 @@
 
     <!-- Book Now Button (only to Users) -->
     <% if(!currentUser || !currentUser._id.equals(listing.owner._id)){ %>
-        <a href="#" class="btn btn-dark offset-2" style="padding: 0.7rem 1rem;">Book Now</a>
+        <a href="/listings/<%= listing._id %>/book" class="btn btn-dark offset-2" style="padding: 0.7rem 1rem;">Book Now</a>
     <% } %>
     
     <!-- Edit & Delete Button (only to Owner)-->
