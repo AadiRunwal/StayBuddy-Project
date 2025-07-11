@@ -372,3 +372,4 @@ const insertData = async ()=>{
 }
 
 insertData();
+// console.log(process.env.ATLAS_URL)

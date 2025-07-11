@@ -1,9 +1,12 @@
 body{
   font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   margin: 0;
+  height: 100dvh;
+  width: max(100dvh, 100%);
+  flex-direction: column;
+  background-color: #fe424d;
+  overflow-x: hidden;
 }
 
 .container{
@@ -18,7 +21,8 @@ body{
 
 /* ----- Homepage ----- */
 .homepage{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     background-color: #fe424d;
     color: white;
     text-align: center;
@@ -52,7 +56,7 @@ body{
 }
 .homepage-brand h1{
     margin: 0;
-    font-size: calc(4rem + 3vw);
+    font-size: calc(4rem + 3dvw);
 }
 
 .homepage-btn{
@@ -139,8 +143,16 @@ body{
 
 
 /* ----- All Listings Cards ------ */
+.all-Listings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .listing-card{
     border:none !important;
+    height: 5rem;
+    width: 25rem;
     margin-bottom: 2.5rem;
 }
 .card-image{
@@ -158,6 +170,7 @@ body{
 .all-Listings a{
     text-decoration: none;
 }
+
 /* overlay-effect */
 .card-img-overlay{
     opacity: 0;
@@ -169,8 +182,11 @@ body{
 
 
 /* ----- Show Listing Card----- */
+.showListing-card{
+    border: none !important;
+}
 .show-image{
-    height: 50vh;
+    height: 50dvh;
 }
 
 /* ----- Show Listing Buttons----- */
@@ -178,8 +194,14 @@ body{
     display: flex;
 }
 
+/* ----- Map ----- */
+#map{
+    height: 25rem;
+    width: min(80%, 50rem);
+}
 
 /* ----- footer ----- */
+
 .foot-info{
     height: 10rem;
     background-color: #ebebeb;
@@ -217,4 +239,27 @@ margin: 0.3rem;
 }
 .foot-links a:hover{
     text-decoration: underline;
+}
+
+
+@media(max-width:992px){
+    .all-Listings a{
+        width: 100%;
+        margin: 1rem;
+    }
+    .listing-card{
+        width: 100%;
+    }
+}
+
+@media (max-width:768px){
+    .showListing-card{
+        width: 85% !important;
+    }
+}
+
+@media (min-width:575px) and (max-width:768px){
+    .review-card{
+        width: 50% !important;
+    }
 }

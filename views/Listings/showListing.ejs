@@ -10,7 +10,7 @@
             <h3>Listing Details</h3>
             <br>
         </div>
-        <div class="card listing-card col-8 offset-2">
+        <div class="card showListing-card col-8 offset-2">
             <img src="<%= listing.image.url %>" alt="listing image" class="card-image show-image">
             <div class="card-body">
                 <p class="card-text" style="font-size: 2rem;"><b><%= listing.title %></b></p>
@@ -26,7 +26,7 @@
 
     <!-- Book Now Button (only to Users) -->
     <% if(!currentUser || !currentUser._id.equals(listing.owner._id)){ %>
-        <a href="/listings/<%= listing._id %>/book" class="btn btn-dark offset-2" style="padding: 0.7rem 1rem;">Book Now</a>
+        <a href="/listings/<%= listing._id %>/book" class="btn btn-dark offset-2 mt-3" style="padding: 0.7rem 1rem;">Book Now</a>
     <% } %>
     
     <!-- Edit & Delete Button (only to Owner)-->
@@ -94,10 +94,10 @@
             
             <div class="row">
                 <% for(let review of listing.reviews){ %>
-                <div class="card col-5 ms-3 mb-3">
+                <div class="card review-card col-5 ms-3 mb-3">
                     <div class="card-body">
                         <h5 class="card-title mt-3"><i>@ <%= review.author.username %></i></h5>
-                        <p class="starability-result card-text ms-1" data-rating=<%= review.rating %>></p>
+                        <p class="starability-result card-text" data-rating=<%= review.rating %>></p>
                         <p class="card-text mt-3"><%= review.comment %></p>
                     </div>
 
@@ -114,11 +114,11 @@
 <!-- __________ Display Map __________ -->
 
     <div class="row">
-        <div class="col-8 offset-2 mb-5">
+        <div class="offset-2 me-5">
             <br>
             <h3>Where You'll be</h3>
             <br>
-            <div id="map" style="height:400px; width: 850px;"></div>
+            <div id="map"></div>
         </div>
     </div>
 
