@@ -18,3 +18,9 @@
     }, false)
   })
 })()
+
+let profile = document.querySelector(".profile");
+let popup = document.querySelector(".popup");
+profile.addEventListener("click",()=>{
+  popup.classList.toggle("show")
+})

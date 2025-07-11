@@ -2,16 +2,17 @@ body{
   font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
   margin: 0;
-  height: 100dvh;
+  /* height: 100dvh; */
   width: max(100dvh, 100%);
+  contain: inline-size;
   flex-direction: column;
   background-color: #fe424d;
   overflow-x: hidden;
 }
 
-.container{
+/* .container{
     flex: 1;
-}
+} */
 
 .btn{
     background-color: #fe424d !important; 
@@ -49,21 +50,20 @@ body{
     /* margin-top: 2rem; */
 }
 .homepage-brand img{
-    height: calc(5rem + 4vw);
-    width: calc(5rem + 4vw);
+    height: calc(2.5rem + 7vw);
     border-radius: 1rem;
     margin-right: 0.5rem;
 }
 .homepage-brand h1{
     margin: 0;
-    font-size: calc(4rem + 3dvw);
+    font-size: calc(1.5rem + 5dvw);
 }
 
 .homepage-btn{
     background-color: white;
     color: crimson;
     padding: 1rem;
-    width: 20rem;
+    width: min(20rem, 70%);
     border: none;
     border-radius: 2rem;
     font-weight: bold;
@@ -120,6 +120,7 @@ body{
     justify-content: space-between !important;
 }
 .nav-link{
+    font-size: 1.2rem !important;
     color: #222222 !important;
     white-space: nowrap;
 }
@@ -139,6 +140,35 @@ body{
 /* Navbar Hover Effect */
 .nav-link:hover{
     scale: 1.03;
+}
+
+/* ----- Profile ----- */
+.profile{
+    color: lightcoral;
+    border: 2px solid lightcoral;
+    border-radius: 50%;
+    padding: 0.3rem 0.4rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.popup{
+    display: none;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+}
+.show{
+    display: block;
+}
+
+.profile:hover{
+    transform: scale(1.05);
 }
 
 
@@ -184,9 +214,10 @@ body{
 /* ----- Show Listing Card----- */
 .showListing-card{
     border: none !important;
+    width: 70% !important;
 }
 .show-image{
-    height: 50dvh;
+    height: 30rem;
 }
 
 /* ----- Show Listing Buttons----- */
@@ -197,7 +228,7 @@ body{
 /* ----- Map ----- */
 #map{
     height: 25rem;
-    width: min(80%, 50rem);
+    width: 70%;
 }
 
 /* ----- footer ----- */
@@ -242,19 +273,32 @@ margin: 0.3rem;
 }
 
 
+/* ---------- Design when NavBar Collapses. ---------- */
+
 @media(max-width:992px){
     .all-Listings a{
-        width: 100%;
-        margin: 1rem;
+        width: 80% !important;
+        height: 40rem !important;
+        margin: 1rem !important;
     }
     .listing-card{
-        width: 100%;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 1rem !important;
     }
-}
+    .allListing-image{
+        height: 70% !important;
+    }
+    .allListing-text{
+        font-size: 2rem !important;
+    }
 
-@media (max-width:768px){
-    .showListing-card{
-        width: 85% !important;
+    .profile{
+        font-size: 1.8rem;
+        position: absolute;
+        width: 2.6rem;
+        top: 0.5rem;
+        right: 5rem;
     }
 }
 

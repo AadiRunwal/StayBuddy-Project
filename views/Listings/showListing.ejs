@@ -26,12 +26,12 @@
 
     <!-- Book Now Button (only to Users) -->
     <% if(!currentUser || !currentUser._id.equals(listing.owner._id)){ %>
-        <a href="/listings/<%= listing._id %>/book" class="btn btn-dark offset-2 mt-3" style="padding: 0.7rem 1rem;">Book Now</a>
+        <a href="/listings/<%= listing._id %>/book" class="btn btn-dark offset-2 mt-3" style="padding: 0.7rem 1rem; width: 8rem;">Book Now</a>
     <% } %>
     
     <!-- Edit & Delete Button (only to Owner)-->
     <% if(currentUser && currentUser._id.equals(listing.owner._id)){ %>
-        <div class="showListing-btns mb-4">
+        <div class="showListing-btns mt-4 mb-4">
             <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-2">Edit</a>
             <form method="Post" action="/listings/<%= listing._id %>?_method=DELETE">
                 <button class="btn btn-dark offset-4" style="background-color: black !important;">Delete</button>
